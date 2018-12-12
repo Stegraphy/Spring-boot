@@ -1,8 +1,10 @@
 package com.example.exchange.springboot1.Control;
 
 import com.example.exchange.springboot1.pojo.IMoocJSONResult;
+import com.example.exchange.springboot1.pojo.Resource;
 import com.example.exchange.springboot1.pojo.User;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,9 @@ import java.util.Date;
 @RestController     //@RestControll = @Controller + @ResponseBody
 @RequestMapping("/user")
 public class UserController {
+
+    @Autowired
+    private Resource resource;
 
     @RequestMapping("/getuser")
     @ResponseBody
@@ -42,5 +47,13 @@ public class UserController {
 
         return  IMoocJSONResult.ok(u);
 
+    }
+
+    @RequestMapping("/getResource")
+    public IMoocJSONResult getResource() {
+        Resource bean = new Resource();
+        BeanUtils.copyProperties(resource, bean);
+
+        return IMoocJSONResult.ok(bean);
     }
 }

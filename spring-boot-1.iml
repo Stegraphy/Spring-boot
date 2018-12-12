@@ -2,7 +2,13 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/example/exchange/springboot1/SpringBoot1Application.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/example/exchange/springboot1/pojo/Resource.java</file>
+          <file>file://$MODULE_DIR$/src/main/resources/resource.properties</file>
+        </fileset>
+      </configuration>
     </facet>
     <facet type="web" name="Web">
       <configuration>
@@ -81,5 +87,6 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.0.2.RELEASE" level="project" />
   </component>
 </module>
